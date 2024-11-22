@@ -1,0 +1,13 @@
+services:
+  web:
+    container_name: aws-price-manager
+    build: ./
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/app:cached
+      - ~/.aws:/home/node/.aws
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+    stdin_open: true
