@@ -39,7 +39,7 @@ export default function Page() {
 
   React.useEffect(() => { 
     fetchServices();
-  }, [fetchServices]);
+  }, []);
 
   React.useEffect(() => {
     // 合計金額の計算
@@ -71,7 +71,6 @@ export default function Page() {
       };
 
       setServiceCards(prev => [...prev, newCard]);
-
       // スペックオプションを取得
       const fetchSpecs = async () => {
         const newSpecs: SpecOptions = {};
